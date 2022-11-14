@@ -3,12 +3,8 @@ import update from 'immutability-helper';
 
 import {
   appChangeLanguageRequest,
-  appGetCurrentUserFailure,
-  appGetCurrentUserRequest,
-  appGetCurrentUserSuccess,
   appInitializeRequest,
   appInitializeSuccess,
-  appLogoutSuccess,
   appShowLoading
 } from './actions';
 
@@ -43,36 +39,6 @@ const appReducer = createReducer(initialState, {
       },
       authenticated: {
         $set: action.payload
-      }
-    }),
-  /** GET PROFILE */
-  [appGetCurrentUserRequest]: (state) => state,
-  [appGetCurrentUserSuccess]: (state, action) =>
-    update(state, {
-      user: {
-        $set: action.payload
-      },
-      authenticated: {
-        $set: true
-      }
-    }),
-  [appGetCurrentUserFailure]: (state) =>
-    update(state, {
-      user: {
-        $set: {}
-      },
-      authenticated: {
-        $set: false
-      }
-    }),
-  /**  END GET PROFILE */
-  [appLogoutSuccess]: (state) =>
-    update(state, {
-      user: {
-        $set: {}
-      },
-      authenticated: {
-        $set: false
       }
     }),
   [appChangeLanguageRequest]: (state, action) =>

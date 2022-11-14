@@ -1,5 +1,5 @@
 import { snakeCaseToTitleCase } from '@utils';
-import { ADMIN_CENTER_ACCESS_TOKEN, ERROR_TYPE } from '@utils/constants';
+import { APPLICATION_ACCESS_TOKEN, ERROR_TYPE } from '@utils/constants';
 import { getLocalStorage } from '@utils/localStorage';
 import axios from 'axios';
 
@@ -11,7 +11,7 @@ const instance = axios.create({
 });
 
 instance.interceptors.request.use(async (config) => {
-  const accessToken = getLocalStorage(ADMIN_CENTER_ACCESS_TOKEN);
+  const accessToken = getLocalStorage(APPLICATION_ACCESS_TOKEN);
   config.headers['Content-type'] = 'application/json';
   if (accessToken) {
     config.headers['authorization'] = `Bearer ${accessToken}`;

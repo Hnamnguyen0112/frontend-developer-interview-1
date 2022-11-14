@@ -30,6 +30,6 @@ export const ERROR_TYPE = {
   multiple: 'multiple'
 };
 
-export const ADMIN_CENTER_TITLE_PREFIX = 'Admin Center - ';
-export const ADMIN_CENTER_ACCESS_TOKEN = 'admin_center/app/ACCESS_TOKEN';
-export const ADMIN_CENTER_REFRESH_TOKEN = 'admin_center/app/REFRESH_TOKEN';
+export const APPLICATION_TITLE_PREFIX = 'APPLICATION - ';
+export const APPLICATION_ACCESS_TOKEN = 'application/app/ACCESS_TOKEN';
+export const APPLICATION_REFRESH_TOKEN = 'application/app/REFRESH_TOKEN';

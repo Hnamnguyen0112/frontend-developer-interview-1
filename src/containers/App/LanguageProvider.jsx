@@ -5,7 +5,6 @@ import { connectAutoDispatch } from '@utils/connectAutoDispatch';
 import PropTypes from 'prop-types';
 
 export function LanguageProvider({ locale, children }) {
-  console.log(locale);
   return (
     <IntlProvider locale={locale} key={locale} messages={messages[locale]}>
       {React.Children.only(children)}
