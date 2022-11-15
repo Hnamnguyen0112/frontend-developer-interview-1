@@ -9,6 +9,7 @@
 body {
   margin: 0;
   font-family: 'Epilogue', sans-serif;
+  font-size: 18px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
