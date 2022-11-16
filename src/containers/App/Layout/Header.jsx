@@ -55,7 +55,7 @@ const company = [
 export default function Header() {
   return (
     <nav className="flex items-center justify-between flex-wrap bg-teal py-6 px-10">
-      <div className="flex items-center flex-no-shrink text-white mr-6">
+      <div className="flex items-center flex-no-shrink text-almost-white mr-6">
         <SVG src={logo} />
       </div>
       <div className="block lg:hidden">
@@ -75,7 +75,7 @@ export default function Header() {
           >
             <Popover.Panel className="absolute right-0 top-0 ">
               {({ close }) => (
-                <div className="p-5 w-56 md:w-80 overflow-hidden shadow-2xl ring-1 ring-black ring-opacity-5 z-10 min-h-screen bg-white text-gray-600">
+                <div className="p-5 w-56 md:w-80 overflow-hidden shadow-2xl ring-1 ring-black ring-opacity-5 z-10 min-h-screen bg-white text-medium-gray">
                   <div className="h-10">
                     <SVG
                       className="inline-block float-right"
@@ -127,7 +127,7 @@ export default function Header() {
                   <div className="flex mt-4">
                     <Link
                       to="/"
-                      className="inline-block text-md text-gray-600 hover:text-black mx-auto"
+                      className="inline-block text-md text-medium-gray hover:text-almost-black mx-auto"
                     >
                       <FormattedMessage id={stringKeys.login} />
                     </Link>
@@ -135,7 +135,7 @@ export default function Header() {
                   <div className="flex mt-2">
                     <Link
                       to="/"
-                      className="px-14 py-2 inline-block text-md text-gray-600 hover:text-black mx-auto rounded-2xl border-2 border-gray-600"
+                      className="px-14 py-2 inline-block text-md text-medium-gray hover:text-almost-black mx-auto rounded-2xl border-2 border-gray-600"
                     >
                       <FormattedMessage id={stringKeys.register} />
                     </Link>
@@ -151,7 +151,7 @@ export default function Header() {
           <Menu as="div" className="lg:inline-block lg:mt-0 relative mx-8">
             {({ open }) => (
               <>
-                <Menu.Button className="flex items-center leading-snug text-gray-600 hover:text-black">
+                <Menu.Button className="flex items-center leading-snug text-medium-gray hover:text-almost-black">
                   <FormattedMessage id={stringKeys.features} />{' '}
                   <SVG className="my-auto ml-4" src={open ? arrowUpIcon : arrowDownIcon} />
                 </Menu.Button>
@@ -162,7 +162,7 @@ export default function Header() {
                         {({ active }) => (
                           <Link
                             className={`${
-                              active ? 'bg-gray-200' : 'text-gray-600'
+                              active ? 'bg-gray-200' : 'text-medium-gray'
                             } group flex w-full items-center rounded-md px-2 py-2 text-md`}
                           >
                             <SVG className="mx-4" src={feature.icon} />
@@ -179,7 +179,7 @@ export default function Header() {
           <Menu as="div" className="lg:inline-block lg:mt-0 relative mx-8">
             {({ open }) => (
               <>
-                <Menu.Button className="flex items-center leading-snug text-gray-600 hover:text-black">
+                <Menu.Button className="flex items-center leading-snug text-medium-gray hover:text-almost-black">
                   <FormattedMessage id={stringKeys.company} />{' '}
                   <SVG className="my-auto ml-4" src={open ? arrowUpIcon : arrowDownIcon} />
                 </Menu.Button>
@@ -190,7 +190,7 @@ export default function Header() {
                         {({ active }) => (
                           <Link
                             className={`${
-                              active ? 'bg-gray-200' : 'text-gray-600'
+                              active ? 'bg-gray-200' : 'text-medium-gray'
                             } group flex w-full items-center rounded-md px-2 py-2 text-md`}
                           >
                             {item.name}
@@ -205,24 +205,27 @@ export default function Header() {
           </Menu>
           <Link
             to="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-black mx-8"
+            className="block mt-4 lg:inline-block lg:mt-0 text-medium-gray hover:text-almost-black mx-8"
           >
             <FormattedMessage id={stringKeys.careers} />
           </Link>
           <Link
             to="/"
-            className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-black mx-8"
+            className="block mt-4 lg:inline-block lg:mt-0 text-medium-gray hover:text-almost-black mx-8"
           >
             <FormattedMessage id={stringKeys.about} />
           </Link>
         </div>
         <div>
-          <Link to="/" className="inline-block text-md text-gray-600 hover:text-black mx-4">
+          <Link
+            to="/"
+            className="inline-block text-md text-medium-gray hover:text-almost-black mx-4"
+          >
             <FormattedMessage id={stringKeys.login} />
           </Link>
           <Link
             to="/"
-            className="px-6 py-2 inline-block text-md text-gray-600 hover:text-black mx-4 rounded-2xl border-2 border-gray-600"
+            className="px-6 py-2 inline-block text-md text-medium-gray hover:text-almost-black mx-4 rounded-2xl border-2 border-gray-600"
           >
             <FormattedMessage id={stringKeys.register} />
           </Link>

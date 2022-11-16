@@ -21,12 +21,12 @@ const Home = () => {
           <p className="mb-5 lg:mb-12 text-4xl lg:text-8xl break-words font-bold">
             <FormattedMessage id={stringKeys.main_title} />
           </p>
-          <p className="mb-5 lg:mb-6 tracking-tight lg:tracking-normal whitespace-normal leading-loose lg:leading-10 text-md lg:text-2xl lg:text-left text-center text-gray-400 font-bold">
+          <p className="mb-5 lg:mb-6 tracking-tight lg:tracking-normal whitespace-normal leading-loose lg:leading-10 text-md lg:text-2xl lg:text-left text-center text-medium-gray font-bold">
             <FormattedMessage id={stringKeys.main_description} />
           </p>
           <button
             type="button"
-            className="mb-16 lg:mb-24 bg-black text-white py-4 px-8 rounded-2xl font-bold text-md lg:text-xl border-2 border-black hover:text-black hover:bg-white"
+            className="mb-16 lg:mb-24 bg-black text-almost-white py-4 px-8 rounded-2xl font-bold text-md lg:text-xl border-2 border-black hover:text-almost-black hover:bg-white"
           >
             <FormattedMessage id={stringKeys.learn_more} />
           </button>
