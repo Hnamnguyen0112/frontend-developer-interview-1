@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import FallbackPage from '@components/FallbackPage';
@@ -35,6 +36,9 @@ function App({ initialized, appInitializeRequest }) {
     <LanguageProvider>
       <BrowserRouter>
         <>
+          <Helmet>
+            <title>Frontend Mentor | Intro section with dropdown navigation</title>
+          </Helmet>
           <Routes>
             {routes.map(({ path, key, component, children }) => {
               if (!children || !children.length)
