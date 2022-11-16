@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react';
 import SVG from 'react-inlinesvg';
+import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import arrowDownIcon from '@assets/svg/icon-arrow-down.svg';
 import arrowUpIcon from '@assets/svg/icon-arrow-up.svg';
@@ -11,25 +12,26 @@ import reminderLogo from '@assets/svg/icon-reminders.svg';
 import todoLogo from '@assets/svg/icon-todo.svg';
 import logo from '@assets/svg/logo.svg';
 import { Disclosure, Menu, Popover, Transition } from '@headlessui/react';
+import { stringKeys } from '@i18n/strings/stringKeys';
 
 const features = [
   {
-    name: 'Todo List',
+    name: <FormattedMessage id={stringKeys.todo_list} />,
     path: '/',
     icon: todoLogo
   },
   {
-    name: 'Calendar',
+    name: <FormattedMessage id={stringKeys.calendar} />,
     path: '/',
     icon: calendarLogo
   },
   {
-    name: 'Reminders',
+    name: <FormattedMessage id={stringKeys.reminders} />,
     path: '/',
     icon: reminderLogo
   },
   {
-    name: 'Planning',
+    name: <FormattedMessage id={stringKeys.planning} />,
     path: '/',
     icon: planningLogo
   }
@@ -37,15 +39,15 @@ const features = [
 
 const company = [
   {
-    name: 'History',
+    name: <FormattedMessage id={stringKeys.history} />,
     path: '/'
   },
   {
-    name: 'Our Team',
+    name: <FormattedMessage id={stringKeys.our_team} />,
     path: '/'
   },
   {
-    name: 'Blog',
+    name: <FormattedMessage id={stringKeys.blog} />,
     path: '/'
   }
 ];
@@ -85,7 +87,7 @@ export default function Header() {
                     {({ open }) => (
                       <>
                         <Disclosure.Button className="block py-2 text-left w-full flex">
-                          Features{' '}
+                          <FormattedMessage id={stringKeys.features} />{' '}
                           <SVG className="my-auto mx-4" src={open ? arrowUpIcon : arrowDownIcon} />
                         </Disclosure.Button>
                         <Disclosure.Panel className="text-gray-500">
@@ -103,7 +105,7 @@ export default function Header() {
                     {({ open }) => (
                       <>
                         <Disclosure.Button className="block py-2 text-left w-full flex">
-                          Company{' '}
+                          <FormattedMessage id={stringKeys.company} />{' '}
                           <SVG className="my-auto mx-4" src={open ? arrowUpIcon : arrowDownIcon} />
                         </Disclosure.Button>
                         <Disclosure.Panel className="text-gray-500">
@@ -117,17 +119,17 @@ export default function Header() {
                     )}
                   </Disclosure>
                   <Link to="/" className="block py-2">
-                    Careers
+                    <FormattedMessage id={stringKeys.careers} />
                   </Link>
                   <Link to="/" className="block py-2">
-                    About
+                    <FormattedMessage id={stringKeys.about} />
                   </Link>
                   <div className="flex mt-4">
                     <Link
                       to="/"
                       className="inline-block text-md text-gray-600 hover:text-black mx-auto"
                     >
-                      Login
+                      <FormattedMessage id={stringKeys.login} />
                     </Link>
                   </div>
                   <div className="flex mt-2">
@@ -135,7 +137,7 @@ export default function Header() {
                       to="/"
                       className="px-14 py-2 inline-block text-md text-gray-600 hover:text-black mx-auto rounded-2xl border-2 border-gray-600"
                     >
-                      Register
+                      <FormattedMessage id={stringKeys.register} />
                     </Link>
                   </div>
                 </div>
@@ -150,9 +152,10 @@ export default function Header() {
             {({ open }) => (
               <>
                 <Menu.Button className="flex items-center leading-snug text-gray-600 hover:text-black">
-                  Features <SVG className="my-auto ml-4" src={open ? arrowUpIcon : arrowDownIcon} />
+                  <FormattedMessage id={stringKeys.features} />{' '}
+                  <SVG className="my-auto ml-4" src={open ? arrowUpIcon : arrowDownIcon} />
                 </Menu.Button>
-                <Menu.Items className="z-10 absolute right-0 mt-2 w-40 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="z-10 absolute right-0 mt-2 w-44 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="px-1 py-1">
                     {features.map((feature) => (
                       <Menu.Item key={feature.name}>
@@ -177,9 +180,10 @@ export default function Header() {
             {({ open }) => (
               <>
                 <Menu.Button className="flex items-center leading-snug text-gray-600 hover:text-black">
-                  Company <SVG className="my-auto ml-4" src={open ? arrowUpIcon : arrowDownIcon} />
+                  <FormattedMessage id={stringKeys.company} />{' '}
+                  <SVG className="my-auto ml-4" src={open ? arrowUpIcon : arrowDownIcon} />
                 </Menu.Button>
-                <Menu.Items className="z-10 absolute left-0 mt-2 w-32 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="z-10 absolute left-0 mt-2 w-36 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                   <div className="px-1 py-1">
                     {company.map((item) => (
                       <Menu.Item key={item.name}>
@@ -203,24 +207,24 @@ export default function Header() {
             to="/"
             className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-black mx-8"
           >
-            Careers
+            <FormattedMessage id={stringKeys.careers} />
           </Link>
           <Link
             to="/"
             className="block mt-4 lg:inline-block lg:mt-0 text-gray-600 hover:text-black mx-8"
           >
-            About
+            <FormattedMessage id={stringKeys.about} />
           </Link>
         </div>
         <div>
           <Link to="/" className="inline-block text-md text-gray-600 hover:text-black mx-4">
-            Login
+            <FormattedMessage id={stringKeys.login} />
           </Link>
           <Link
             to="/"
             className="px-6 py-2 inline-block text-md text-gray-600 hover:text-black mx-4 rounded-2xl border-2 border-gray-600"
           >
-            Register
+            <FormattedMessage id={stringKeys.register} />
           </Link>
         </div>
       </div>

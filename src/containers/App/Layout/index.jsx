@@ -6,7 +6,7 @@ export default function AppLayout({ children }) {
   return (
     <div className="min-h-screen relative">
       <Header />
-      <main>{children}</main>
+      <main className="min-h-[calc(100vh-95px)] flex">{children}</main>
     </div>
   );
 }
